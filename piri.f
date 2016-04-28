@@ -1,6 +1,6 @@
 C f2py -c -m piri piri.f
 C=======================================================================
-      SUBROUTINE GETPI(PROF, NSAMP, DX, PI)
+      SUBROUTINE GETPI(PROF, NSAMP, DX, BASE, PI)
 C=======================================================================
 C Filter a longitudinal road profile and calculate PI.
 C
@@ -30,9 +30,10 @@ C <-- K1, K2, C, MU   Filter coefficients.
 Cf2py intent(in,out) prof
 Cf2py intent(in,out) nsamp
 Cf2py intent(in) dx
+Cf2py intent(in) base
 Cf2py intent(out) pi
 
-      BASE = 0.25
+Cadf  BASE = 0.25
       UNITSC = 1.
       XLEAD = 11.
       XEXP = 1
